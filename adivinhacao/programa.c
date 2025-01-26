@@ -13,7 +13,10 @@ int main() {
 	int ganhou = 0;
 
 	int chute;
+	printf("chute %d\n", chute);
 	int tentativas = 0;
+
+	double pontos = 1000;
 
 	while (ganhou == 0){
 
@@ -44,7 +47,12 @@ int main() {
 			printf("Seu chute foi maior do que o número secreto.\n");
 		}
 		tentativas++;
+
+		double pontosPerdidos = (chute - numeroSecreto) / (double)2;
+		pontos = pontos - pontosPerdidos;
+
 	}
 
-	printf("Fim do jogo!! Você precisou de %d tentativas.\n", tentativas);
+	printf("Fim do jogo!!\n Você precisou de %d tentativas.\n", tentativas);
+	printf("Total de pontos: %.1f\n", pontos);
 }
